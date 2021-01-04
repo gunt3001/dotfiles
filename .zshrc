@@ -109,7 +109,7 @@ PATH=$PATH:/mnt/user/Home/OneDrive/Apps/bin
 # git clone --bare <git-repo-url> $HOME/.cfg
 
 # Use the `config` command in place of `git` for config management
-config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 # -------------------------------------------------------------------
 
 
