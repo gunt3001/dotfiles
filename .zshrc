@@ -100,3 +100,16 @@ source $ZSH/oh-my-zsh.sh
 
 # PATH=$PATH:~/Dropbox/Apps/bin:~/bin
 PATH=$PATH:/mnt/user/Home/OneDrive/Apps/bin
+
+# -------------------------------------------------------------------
+# Set up dotfiles management system outlined in this tutorial:
+# https://www.atlassian.com/git/tutorials/dotfiles
+
+# When setting up for the first time, run
+# git clone --bare <git-repo-url> $HOME/.cfg
+
+# Use the `config` command in place of `git` for config management
+config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+# -------------------------------------------------------------------
+
+
