@@ -100,8 +100,3 @@ source $ZSH/oh-my-zsh.sh
 
 # PATH=$PATH:~/Dropbox/Apps/bin:~/bin
 PATH=$PATH:/mnt/user/Home/OneDrive/Apps/bin
-
-# Symlink OneDrive if not already exists
-if [ ! -e /home/gun/OneDrive ]; then
-    ln -s /mnt/user/Home/OneDrive /home/gun/OneDrive
-fi
