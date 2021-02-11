@@ -2,6 +2,7 @@
 
 import subprocess
 import os
+import urllib.request
 
 # TODO: Installation flags and interactive mode
 
@@ -16,6 +17,10 @@ OHMYZSH_INSTALL_DIR = os.path.join(HOMEDIR, ".oh-my-zsh")
 subprocess.run(["git", "clone", "https://github.com/ohmyzsh/ohmyzsh.git",
                 OHMYZSH_INSTALL_DIR], check=True)
 subprocess.run(["chsh", "--shell", "/usr/bin/zsh", "gun"])
+
+# Install youtube-dl
+urllib.request.urlretrieve("https://yt-dl.org/downloads/latest/youtube-dl", "/usr/local/bin/youtube-dl")
+os.chmod("/usr/local/bin/youtube-dl", 0o755)
 
 # Setup dotfiles
 # Set up dotfiles management system outlined in this tutorial
