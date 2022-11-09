@@ -1,0 +1,22 @@
+## Basic settings
+
+# set hidden on
+set drawbox on
+set icons on
+
+## Favorites
+
+map `a cd /mnt/user/Anime/Current
+
+## Hotkeys
+
+# Start current shell (ranger behavior)
+map S $$SHELL
+
+## Basic commands
+
+cmd mkdir ${{
+  printf "Directory Name: "
+  read ans
+  mkdir $ans
+}}
