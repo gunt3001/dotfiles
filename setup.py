@@ -26,10 +26,9 @@ def main(is_interactive = False):
         install_flags["lf"] = ask_option("lf file manager (install or update)")
         install_flags["dotfiles"] = ask_option("Dotfiles")
         install_flags["onedrive-symlink"] = ask_option("OneDrive symlink to home dir")
-
-    answer = input("Proceed? (y/n): ").lower()
-    if answer != "y":
-        return
+        answer = input("Proceed? (y/n): ").lower()
+        if answer != "y":
+            return
 
     if install_flags["oh-my-zsh"] or not is_interactive:
         install_oh_my_zsh()
