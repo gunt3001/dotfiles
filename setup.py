@@ -3,6 +3,7 @@
 import subprocess
 import os
 import urllib.request
+import tarfile
 
 HOMEDIR = "/home/gun"
 DOTFILES_REPO_URL = "https://github.com/gunt3001/dotfiles.git"
@@ -15,9 +16,12 @@ install_flags = {}
 
 def main():
     print ("===== Starting personal setup script... =====")
+    print ("Note: Home dir is fixed at /home/gun/")
+    print ("Note: Run as root if installing programs!")
 
     install_flags["oh-my-zsh"] = ask_option("Oh-My-Zsh")
     install_flags["yt-dlp"] = ask_option("yt-dlp (install or update)")
+    install_flags["lf"] = ask_option("lf file manager (install or update)")
     install_flags["dotfiles"] = ask_option("Dotfiles")
     install_flags["onedrive-symlink"] = ask_option("OneDrive symlink to home dir")
 
@@ -29,6 +33,8 @@ def main():
         install_oh_my_zsh()
     if install_flags["yt-dlp"]:
         install_yt_dlp()
+    if install_flags["lf"]:
+        install_lf()
     if install_flags["dotfiles"]:
         setup_dotfiles()
     if install_flags["onedrive-symlink"]:
@@ -48,6 +54,15 @@ def install_oh_my_zsh():
 def install_yt_dlp():
     urllib.request.urlretrieve("https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp", "/usr/local/bin/yt-dlp")
     os.chmod("/usr/local/bin/yt-dlp", 0o755)
+
+def install_lf():
+    dl_path = os.path.join(HOMEDIR, "lf.tar.gz")
+    urllib.request.urlretrieve("https://github.com/gokcehan/lf/releases/latest/download/lf-linux-amd64.tar.gz", dl_path)
+    file = tarfile.open(dl_path)
+    file.extract("lf", "/usr/local/bin")
+    file.close()
+    os.chmod("/usr/local/bin/lf", 0o755)
+    os.remove(dl_path)
 
 def setup_dotfiles():
     # Setup dotfiles
