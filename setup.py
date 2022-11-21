@@ -4,6 +4,7 @@ import subprocess
 import os
 import urllib.request
 import tarfile
+import sys
 
 HOMEDIR = "/home/gun"
 DOTFILES_REPO_URL = "https://github.com/gunt3001/dotfiles.git"
@@ -14,30 +15,31 @@ OHMYZSH_INSTALL_DIR = os.path.join(HOMEDIR, ".oh-my-zsh")
 
 install_flags = {}
 
-def main():
+def main(is_interactive = False):
     print ("===== Starting personal setup script... =====")
     print ("Note: Home dir is fixed at /home/gun/")
     print ("Note: Run as root if installing programs!")
 
-    install_flags["oh-my-zsh"] = ask_option("Oh-My-Zsh")
-    install_flags["yt-dlp"] = ask_option("yt-dlp (install or update)")
-    install_flags["lf"] = ask_option("lf file manager (install or update)")
-    install_flags["dotfiles"] = ask_option("Dotfiles")
-    install_flags["onedrive-symlink"] = ask_option("OneDrive symlink to home dir")
+    if is_interactive:
+        install_flags["oh-my-zsh"] = ask_option("Oh-My-Zsh")
+        install_flags["yt-dlp"] = ask_option("yt-dlp (install or update)")
+        install_flags["lf"] = ask_option("lf file manager (install or update)")
+        install_flags["dotfiles"] = ask_option("Dotfiles")
+        install_flags["onedrive-symlink"] = ask_option("OneDrive symlink to home dir")
 
     answer = input("Proceed? (y/n): ").lower()
     if answer != "y":
         return
 
-    if install_flags["oh-my-zsh"]:
+    if install_flags["oh-my-zsh"] or not is_interactive:
         install_oh_my_zsh()
-    if install_flags["yt-dlp"]:
+    if install_flags["yt-dlp"] or not is_interactive:
         install_yt_dlp()
-    if install_flags["lf"]:
+    if install_flags["lf"] or not is_interactive:
         install_lf()
-    if install_flags["dotfiles"]:
+    if install_flags["dotfiles"] or not is_interactive:
         setup_dotfiles()
-    if install_flags["onedrive-symlink"]:
+    if install_flags["onedrive-symlink"] or not is_interactive:
         setup_onedrive_symlink()
 
     # [Finalize] Reset ownership in home dir
@@ -94,4 +96,4 @@ def ask_option(component):
         answer = input("Setup " + component + "? (y/n): ").lower()
     return answer == "y"
 
-main()
+main(len(sys.argv) > 1 and sys.argv[1] == "-i")
