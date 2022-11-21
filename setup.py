@@ -30,15 +30,20 @@ def main(is_interactive = False):
         if answer != "y":
             return
 
-    if  not is_interactive or install_flags["oh-my-zsh"]:
+    if not is_interactive or install_flags["oh-my-zsh"]:
+        print("Setting up Oh-My-Zsh")
         install_oh_my_zsh()
-    if  not is_interactive or install_flags["yt-dlp"]:
+    if not is_interactive or install_flags["yt-dlp"]:
+        print("Setting up yt-dlp (install or update)")
         install_yt_dlp()
-    if  not is_interactive or install_flags["lf"]:
+    if not is_interactive or install_flags["lf"]:
+        print("Setting up lf file manager (install or update)")
         install_lf()
-    if  not is_interactive or install_flags["dotfiles"]:
+    if not is_interactive or install_flags["dotfiles"]:
+        print("Setting up Dotfiles")
         setup_dotfiles()
-    if  not is_interactive or install_flags["onedrive-symlink"]:
+    if not is_interactive or install_flags["onedrive-symlink"]:
+        print("Setting up OneDrive symlink to home dir")
         setup_onedrive_symlink()
 
     # [Finalize] Reset ownership in home dir
