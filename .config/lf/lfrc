@@ -16,8 +16,4 @@ map <enter> open
 
 ## Basic commands
 
-cmd mkdir ${{
-  printf "Directory Name: "
-  read ans
-  mkdir $ans
-}}
+cmd mkdir %IFS=" "; mkdir -- "$*"
