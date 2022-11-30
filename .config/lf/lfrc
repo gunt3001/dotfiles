@@ -13,6 +13,7 @@ map `a cd /mnt/user/Anime/Current
 # Start current shell (ranger behavior)
 map S $$SHELL
 map <enter> open
+map D delete
 
 ## Basic commands
 
