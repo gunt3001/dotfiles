@@ -15,6 +15,7 @@ map `` cd ~
 
 # Start current shell (ranger behavior)
 map S $$SHELL
+map f :filter
 map <enter> open
 map D delete
 
