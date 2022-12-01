@@ -18,8 +18,16 @@ map S $$SHELL
 map f :filter
 map <enter> open
 map D delete
+map <esc> reset
 
 ## Basic commands
 
 # mkdir that create single dir, no quote required for spaces (ranger behavior)
 cmd mkdir %IFS=" "; mkdir -- "$*"
+
+# all-in-one reset
+cmd reset :{{
+    :clear
+    :unselect
+    :setfilter
+}}
