@@ -21,4 +21,5 @@ map D delete
 
 ## Basic commands
 
+# mkdir that create single dir, no quote required for spaces (ranger behavior)
 cmd mkdir %IFS=" "; mkdir -- "$*"
