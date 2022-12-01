@@ -19,6 +19,7 @@ map f :filter
 map <enter> open
 map D delete
 map <esc> reset
+map <f-2> rename
 
 ## Basic commands
 
