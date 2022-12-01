@@ -1,0 +1,20 @@
+#!/bin/sh
+
+FILE_PATH="${1}"         # Full path of the highlighted file
+FILE_EXTENSION="${FILE_PATH##*.}"
+FILE_EXTENSION_LOWER="$(printf "%s" "${FILE_EXTENSION}" | tr '[:upper:]' '[:lower:]')"
+
+case "${FILE_EXTENSION_LOWER}" in
+    png|jpg|jpeg|heic|pdf|mkv|mp4|m4v|mov|avi|webm|flac|ogg|wav|mpeg|vob|mp3|asf|wma|wmv|aac|ape|dat) mediainfo "$1";;
+    # md) glow -s dark "$1";;
+    # pdf) pdftotext "$1" -;;
+    # zip) zipinfo "$1";;
+    tar.gz) tar -ztvf "$1";;
+    tar.bz2) tar -jtvf "$1";;
+    tar) tar -tvf "$1";;
+    # rar) unrar l "$1";;
+    # 7z) 7z l "$1";;
+    #html|xml) w3m -dump "$1";;
+    # zsh*|bash*|git*) pistol "$1";;
+    *) highlight -O ansi "$1" || cat "$1";;
+esac

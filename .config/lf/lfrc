@@ -1,5 +1,7 @@
 ## Basic settings
 
+set previewer ~/.config/lf/previewer
+
 # set hidden on
 set drawbox on
 set icons on
