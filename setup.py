@@ -47,7 +47,11 @@ def main(is_interactive = False):
         setup_onedrive_symlink()
 
     # [Finalize] Reset ownership in home dir
-    subprocess.run(["chown", "-R", "gun:gun", HOMEDIR], check=True)
+    # If not interactive, assume UNRAID group
+    if is_interactive:
+        subprocess.run(["chown", "-R", "gun:gun", HOMEDIR], check=True)
+    else:
+        subprocess.run(["chown", "-R", "99:100", HOMEDIR], check=True)
 
 def install_oh_my_zsh():
     if not os.path.isdir(OHMYZSH_INSTALL_DIR):
