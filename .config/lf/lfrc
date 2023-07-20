@@ -2,9 +2,9 @@
 
 set previewer ~/.config/lf/previewer
 
-# set hidden on
-set drawbox on
-set icons on
+# set hidden true
+set drawbox true
+set icons true
 
 ## Favorites
 
