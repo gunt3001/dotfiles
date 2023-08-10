@@ -8,7 +8,7 @@ set icons true
 
 ## Favorites
 
-map `a cd /mnt/user/Anime/Current
+map `a cd /volume1/Anime/Current
 map `` cd ~
 
 ## Hotkeys
