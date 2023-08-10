@@ -93,6 +93,14 @@ def install_sakura():
     if latest_release_asset_id:
         download_path = os.path.join(HOMEDIR, "SakuraHSDownloader")
         download_sakura_release_by_id(sakura_download_key, latest_release_asset_id, download_path)
+
+    os.chmod(download_path, 0o755)  # Make the file executable
+        
+    symlink_path = "/usr/local/bin/sakura"
+    if os.path.exists(symlink_path):
+        os.remove(symlink_path)
+        
+    os.symlink(download_path, symlink_path)
     
 def get_sakura_latest_release_asset_id(token):
     url = f"https://api.github.com/repos/gunt3001/private-sakura-downloader/releases/latest"
