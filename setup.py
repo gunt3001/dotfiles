@@ -12,6 +12,8 @@ DOTFILES_GIT_DIR = os.path.join(HOMEDIR, ".cfg")
 ONEDRIVE_SOURCE_MOUNT_DIR = "/mnt/user/Home/OneDrive"
 ONEDRIVE_DEST_MOUNT_DIR = os.path.join(HOMEDIR, "OneDrive")
 OHMYZSH_INSTALL_DIR = os.path.join(HOMEDIR, ".oh-my-zsh")
+UNIX_USERNAME_GROUP = "gun:gun"
+UNIX_UID_GID = "1026:100"
 
 install_flags = {}
 
@@ -49,9 +51,9 @@ def main(is_interactive = False):
     # [Finalize] Reset ownership in home dir
     # If not interactive, assume UNRAID group
     if is_interactive:
-        subprocess.run(["chown", "-R", "gun:gun", HOMEDIR], check=True)
+        subprocess.run(["chown", "-R", UNIX_USERNAME_GROUP, HOMEDIR], check=True)
     else:
-        subprocess.run(["chown", "-R", "99:100", HOMEDIR], check=True)
+        subprocess.run(["chown", "-R", UNIX_UID_GID, HOMEDIR], check=True)
 
 def install_oh_my_zsh():
     if not os.path.isdir(OHMYZSH_INSTALL_DIR):
