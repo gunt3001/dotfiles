@@ -5,6 +5,7 @@ import os
 import urllib.request
 import tarfile
 import sys
+import json
 
 HOMEDIR = "/home/gun"
 DOTFILES_REPO_URL = "https://github.com/gunt3001/dotfiles.git"
