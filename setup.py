@@ -87,32 +87,58 @@ def install_sakura():
         print("Sakura download key not found, skipping.")
         return
     
-    dl_path = os.path.join(HOMEDIR, "sakura")
-    download_url = "https://github.com/gunt3001/private-sakura-downloader/releases/latest/download/SakuraHSDownloader"
+    latest_release_asset_id = get_latest_release_asset_id(sakura_download_key)
+
+    if latest_release_asset_id:
+        download_path = os.path.join(HOMEDIR, "SakuraHSDownloader")
+        download_sakura_release_by_id(sakura_download_key, latest_release_asset_id, download_path)
     
-    # Use curl to download the file with authorization header
+def get_sakura_latest_release_asset_id(token):
+    url = f"https://api.github.com/repos/gunt3001/private-sakura-downloader/releases/latest"
+    
     curl_command = [
         "curl",
-        "-o", dl_path,
-        "-H", f"Authorization: token {sakura_download_key}",
-        download_url
+        "-H", f"Authorization: Bearer {token}",
+        "-H", "Accept: application/vnd.github.v3+json",
+        url
+    ]
+    
+    try:
+        result = subprocess.run(curl_command, capture_output=True, text=True, check=True)
+        release_data = result.stdout
+        release_data_json = json.loads(release_data)
+        
+        for asset in release_data_json.get("assets", []):
+            if asset.get("name") == "SakuraHSDownloader":
+                return asset.get("id")
+        
+        print("Asset ID for SakuraHSDownloader not found.")
+        return None
+    except subprocess.CalledProcessError:
+        print("Failed to fetch latest Sakura release.")
+        return None
+
+def download_sakura_release_by_id(token, asset_id, download_path):
+    url = f"https://api.github.com/repos/gunt3001/private-sakura-downloader/releases/assets/{asset_id}"
+    
+    headers = {
+        "Authorization": f"Bearer {token}",
+        "Accept": "application/octet-stream"
+    }
+    
+    curl_command = [
+        "curl",
+        "-H", f"Authorization: Bearer {token}",
+        "-H", "Accept: application/octet-stream",
+        "-L", url,
+        "-o", download_path
     ]
     
     try:
         subprocess.run(curl_command, check=True)
-        
-        os.chmod(dl_path, 0o755)  # Make the file executable
-        
-        symlink_path = "/usr/local/bin/sakura"
-        if os.path.exists(symlink_path):
-            os.remove(symlink_path)
-            
-        os.symlink(dl_path, symlink_path)
-        
-        print("Sakura setup completed successfully.")
+        print("SakuraHSDownloader downloaded successfully.")
     except subprocess.CalledProcessError:
-        print("Failed to download Sakura.")
-
+        print("Failed to download SakuraHSDownloader.")
 
 def setup_dotfiles():
     # Setup dotfiles
