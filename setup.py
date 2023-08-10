@@ -28,6 +28,7 @@ def main(is_interactive = False):
         install_flags["lf"] = ask_option("lf file manager (install or update)")
         install_flags["dotfiles"] = ask_option("Dotfiles")
         install_flags["onedrive-symlink"] = ask_option("OneDrive symlink to home dir")
+        install_flags["sakura"] = ask_option("Sakura downloader")
         answer = input("Proceed? (y/n): ").lower()
         if answer != "y":
             return
@@ -47,6 +48,9 @@ def main(is_interactive = False):
     if not is_interactive or install_flags["onedrive-symlink"]:
         print("Setting up OneDrive symlink to home dir")
         setup_onedrive_symlink()
+    if not is_interactive or install_flags["sakura"]:
+        print("Setting up Sakura downloader")
+        install_sakura()
 
     # [Finalize] Reset ownership in home dir
     # If not interactive, assume UNRAID group
@@ -75,6 +79,40 @@ def install_lf():
     file.close()
     os.chmod("/usr/local/bin/lf", 0o755)
     os.remove(dl_path)
+
+def install_sakura():
+    sakura_download_key = os.getenv("SAKURA_DOWNLOAD_KEY")
+    
+    if not sakura_download_key:
+        print("Sakura download key not found, skipping.")
+        return
+    
+    dl_path = os.path.join(HOMEDIR, "sakura")
+    download_url = "https://github.com/gunt3001/private-sakura-downloader/releases/latest/download/SakuraHSDownloader"
+    
+    # Use curl to download the file with authorization header
+    curl_command = [
+        "curl",
+        "-o", dl_path,
+        "-H", f"Authorization: token {sakura_download_key}",
+        download_url
+    ]
+    
+    try:
+        subprocess.run(curl_command, check=True)
+        
+        os.chmod(dl_path, 0o755)  # Make the file executable
+        
+        symlink_path = "/usr/local/bin/sakura"
+        if os.path.exists(symlink_path):
+            os.remove(symlink_path)
+            
+        os.symlink(dl_path, symlink_path)
+        
+        print("Sakura setup completed successfully.")
+    except subprocess.CalledProcessError:
+        print("Failed to download Sakura.")
+
 
 def setup_dotfiles():
     # Setup dotfiles
