@@ -87,7 +87,7 @@ def install_sakura():
         print("Sakura download key not found, skipping.")
         return
     
-    latest_release_asset_id = get_latest_release_asset_id(sakura_download_key)
+    latest_release_asset_id = get_sakura_latest_release_asset_id(sakura_download_key)
 
     if latest_release_asset_id:
         download_path = os.path.join(HOMEDIR, "SakuraHSDownloader")
