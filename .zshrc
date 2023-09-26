@@ -100,7 +100,7 @@ export LC_ALL=en_US.UTF-8
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # PATH=$PATH:~/Dropbox/Apps/bin:~/bin
-PATH=$PATH:/mnt/user/Home/OneDrive/Apps/bin
+# PATH=$PATH:/mnt/user/Home/OneDrive/Apps/bin
 
 # -------------------------------------------------------------------
 # Set up dotfiles management system outlined in this tutorial:
@@ -113,4 +113,5 @@ PATH=$PATH:/mnt/user/Home/OneDrive/Apps/bin
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 # -------------------------------------------------------------------
 
-
+# Default permissions for new files and directories
+umask 002
