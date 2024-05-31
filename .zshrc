@@ -17,3 +17,10 @@ umask 002
 # Configure Starship.rs prompt
 # https://starship.rs/guide/
 eval "$(starship init zsh)"
+
+# Enable command history via arrow keys
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+# History is shared between instances immediately (effective after new prompts)
+setopt share_history
