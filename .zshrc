@@ -14,3 +14,6 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 # Compatible with Synology NAS
 umask 002
 
+# Configure Starship.rs prompt
+# https://starship.rs/guide/
+eval "$(starship init zsh)"
