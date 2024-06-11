@@ -224,13 +224,23 @@ require('lazy').setup({
   --
   -- Use the `dependencies` key to specify the dependencies of a particular plugin
 
-  { -- Fasy navigation with leap.nvim (similar to vim-easymotion)
-    'ggandor/leap.nvim',
-    dependencies = { 'tpope/vim-repeat' },
-    config = function()
-      -- Use Leader-f to leap in any direction
-      vim.keymap.set('n', '<leader>f', '<Plug>(leap)', { desc = '[F]ind with Leap' })
-    end,
+  { -- Fast navigation with flash.nvim
+    'folke/flash.nvim',
+    event = 'VeryLazy',
+    ---@type Flash.Config
+    opts = {},
+    -- stylua:ignore
+    keys = {
+      -- Only enable the standard Flash key here. No fancy tresitter navigation, for now.
+      {
+        '<leader>f',
+        mode = { 'n', 'x', 'o' },
+        function()
+          require('flash').jump()
+        end,
+        desc = 'Flash',
+      },
+    },
   },
 
   { -- Fuzzy Finder (files, lsp, etc)
