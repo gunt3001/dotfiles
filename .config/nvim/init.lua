@@ -224,6 +224,15 @@ require('lazy').setup({
   --
   -- Use the `dependencies` key to specify the dependencies of a particular plugin
 
+  { -- Fasy navigation with leap.nvim (similar to vim-easymotion)
+    'ggandor/leap.nvim',
+    dependencies = { 'tpope/vim-repeat' },
+    config = function()
+      -- Use Leader-f to leap in any direction
+      vim.keymap.set('n', '<leader>f', '<Plug>(leap)', { desc = '[F]ind with Leap' })
+    end,
+  },
+
   { -- Fuzzy Finder (files, lsp, etc)
     'nvim-telescope/telescope.nvim',
     event = 'VimEnter',
@@ -553,7 +562,7 @@ require('lazy').setup({
     lazy = false,
     keys = {
       {
-        '<leader>f',
+        '<leader>F',
         function()
           require('conform').format { async = true, lsp_fallback = true }
         end,
