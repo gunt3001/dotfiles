@@ -9,6 +9,7 @@ export EDITOR='nvim'
 # Run 'config' in place of 'git' command to manage
 # Read more at: https://www.atlassian.com/git/tutorials/dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias lazyconfig='/usr/local/bin/lazygit --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # Override default permissions for new files and folders
 # Compatible with Synology NAS
