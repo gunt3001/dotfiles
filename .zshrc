@@ -93,4 +93,4 @@ zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 
 # Shell integrations
 source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh # fzf - default hotkey C-r
-eval "$(zoxide init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
