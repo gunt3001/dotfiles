@@ -11,6 +11,10 @@ export EDITOR='nvim'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias lazyconfig='/usr/local/bin/lazygit --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
+# Other aliases
+alias l='ls -lah --color'
+alias ..='cd ..'
+
 # Override default permissions for new files and folders
 # Compatible with Synology NAS
 umask 002
