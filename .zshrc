@@ -39,3 +39,45 @@ setopt SHARE_HISTORY
 zstyle ':completion:*' completer _complete
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'
 
+# Install fzf https://github.com/junegunn/fzf
+if [ ! -d "${HOME}/.fzf" ]; then
+	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+	~/.fzf/install --xdg --no-update-rc
+fi
+
+# zinit Plugin Manager - auto-install, if it's not there yet
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
+[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+source "${ZINIT_HOME}/zinit.zsh"
+
+# Load completions
+autoload -Uz compinit && compinit
+zinit cdreplay -q
+
+# Add in zsh plugins
+zinit light Aloxaf/fzf-tab # Use fzf for general auto-completions. Needs to be before zsh-autosuggestions, but after compinit
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions # Command details pop-up
+zinit light zsh-users/zsh-autosuggestions # General autocompletion for paths, commands from history
+
+# Plugin configurations
+# fzf-tab
+# disable sort when completing `git checkout`
+zstyle ':completion:*:git-checkout:*' sort false
+# set descriptions format to enable group support
+# NOTE: don't use escape sequences here, fzf-tab will ignore them
+zstyle ':completion:*:descriptions' format '[%d]'
+# set list-colors to enable filename colorizing
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# force zsh not to show completion menu, which allows fzf-tab to capture the unambiguous prefix
+zstyle ':completion:*' menu no
+# switch group using `<` and `>`
+zstyle ':fzf-tab:*' switch-group '<' '>'
+# preview sub-directory
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+# pop-up style suggestions when using tmux
+zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+
+# Shell integrations
+source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh # fzf - default hotkey C-r
