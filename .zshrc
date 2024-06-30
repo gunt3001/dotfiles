@@ -20,7 +20,7 @@ umask 002
 eval "$(starship init zsh)"
 
 # Enable command history via arrow keys
-HISTFILE=~/.local/share/zsh/history
+HISTFILE=~/.local/state/zsh/history
 HISTSIZE=10000
 SAVEHIST=10000
 # History is shared between instances immediately (effective after new prompts)
