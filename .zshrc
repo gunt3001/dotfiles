@@ -21,10 +21,15 @@ eval "$(starship init zsh)"
 
 # Enable command history via arrow keys
 HISTFILE=~/.local/state/zsh/history
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=10000000
+SAVEHIST=10000000
+# Don't save and find duplicates
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_FIND_NO_DUPS
+setopt HIST_SAVE_NO_DUPS
 # History is shared between instances immediately (effective after new prompts)
-setopt share_history
+setopt SHARE_HISTORY
 
 # Enable case insensitive autocomplete and middle-of-word completion
 zstyle ':completion:*' completer _complete
