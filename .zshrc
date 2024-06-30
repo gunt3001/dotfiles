@@ -5,6 +5,10 @@ export LC_ALL=en_US.UTF-8
 # Set preferred editor to Neovim
 export EDITOR='nvim'
 
+# Add extra PATH dirs
+path+=(~/.local/bin)
+export PATH
+
 # Set up dotfiles management system alias
 # Run 'config' in place of 'git' command to manage
 # Read more at: https://www.atlassian.com/git/tutorials/dotfiles
@@ -45,6 +49,11 @@ if [ ! -d "${HOME}/.fzf" ]; then
 	~/.fzf/install --xdg --no-update-rc
 fi
 
+# Install zoxide https://github.com/ajeetdsouza/zoxide
+if [ ! -f "${HOME}/.local/bin/zoxide" ]; then
+	curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+fi
+
 # zinit Plugin Manager - auto-install, if it's not there yet
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
@@ -81,3 +90,4 @@ zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 
 # Shell integrations
 source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh # fzf - default hotkey C-r
+eval "$(zoxide init zsh)"
