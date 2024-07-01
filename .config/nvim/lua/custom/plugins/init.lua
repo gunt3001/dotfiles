@@ -2,4 +2,8 @@
 --  I promise not to create any merge conflicts in this directory :)
 --
 -- See the kickstart.nvim README for more information
-return {}
+return {
+  'github/copilot.vim', -- GitHub Copilot
+}
+
+-- vim: ts=2 sts=2 sw=2 et
