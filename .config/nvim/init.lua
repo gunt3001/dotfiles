@@ -19,6 +19,7 @@ vim.opt.number = true
 -- vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
+-- hold shift+mouse to temporarily disable nvim native menus
 vim.opt.mouse = 'a'
 
 -- Don't show the mode, since it's already in the status line
