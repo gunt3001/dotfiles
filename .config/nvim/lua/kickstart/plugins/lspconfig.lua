@@ -190,7 +190,17 @@ return {
         ltex = {},
 
         -- Python LSP
-        pylsp = {},
+        pylsp = {
+          settings = {
+            pylsp = {
+              plugins = {
+                pycodestyle = {
+                  maxLineLength = 120, -- bump max line length from default of 79
+                },
+              },
+            },
+          },
+        },
       }
 
       -- Ensure the servers and tools above are installed
