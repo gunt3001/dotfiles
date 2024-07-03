@@ -60,4 +60,16 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+-- Set fold text style
+-- For more fold options, see treesitter.lua
+function GetFoldText()
+  local line = vim.fn.getline(vim.v.foldstart)
+  local sub = line:gsub('/%*', ''):gsub('%*/', ''):gsub('{{{%d=', '')
+  return sub .. '󰇘'
+end
+vim.opt.foldtext = 'v:lua.GetFoldText()'
+vim.opt.fillchars:append {
+  fold = ' ',
+}
+
 -- vim: ts=2 sts=2 sw=2 et
