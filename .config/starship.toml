@@ -17,6 +17,7 @@ Ubuntu = ""
 ssh_only = false
 format = '[ $ssh_symbol$hostname]($style)'
 style = 'bold bg:blue fg:base'
+ssh_symbol = ' '
 
 [username]
 show_always = true
