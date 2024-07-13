@@ -201,6 +201,9 @@ return {
             },
           },
         },
+
+        -- dotnet LSP
+        omnisharp = {},
       }
 
       -- Ensure the servers and tools above are installed
@@ -219,6 +222,9 @@ return {
         -- Python formatters
         'black',
         'isort',
+        -- dotnet using omnisharp
+        -- alternative to consider: csharp-ls
+        'omnisharp',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
