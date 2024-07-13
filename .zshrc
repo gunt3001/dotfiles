@@ -94,3 +94,10 @@ zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 # Shell integrations
 source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh # fzf - default hotkey C-r
 eval "$(zoxide init zsh)"
+
+# fnm
+FNM_PATH="/home/gun/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/gun/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
