@@ -205,6 +205,9 @@ return {
 
         -- dotnet LSP
         omnisharp = {},
+
+        -- Typesript and Javascript LSP
+        tsserver = {},
       }
 
       -- Ensure the servers and tools above are installed
