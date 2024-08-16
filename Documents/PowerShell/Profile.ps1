@@ -4,7 +4,7 @@ $DotfilesGitDir = "$HOME\OneDrive\Settings-Keys\win-dotfiles.bare.git"
 # Function to alias the `config` command to use git with dotfiles repo
 function Dotfiles-Config {
     param (
-        [Parameter(Mandatory=$false, Position=0)]
+        [Parameter(ValueFromRemainingArguments=$true)]
         [string[]]$Args
     )
 
@@ -13,4 +13,4 @@ function Dotfiles-Config {
 }
 
 # Set an alias for `config` to use the function
-Set-Alias -Name config -Value Dotfiles-Config
+Set-Alias config Dotfiles-Config
