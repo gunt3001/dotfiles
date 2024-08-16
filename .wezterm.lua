@@ -28,5 +28,13 @@ config.window_frame = {
   font_size = 10.0,
 }
 
+-- Hotkeys
+config.keys = {
+  {
+    key = 'F11',
+    action = wezterm.action.ToggleFullScreen
+  }
+}
+
 -- and finally, return the configuration to wezterm
 return config
