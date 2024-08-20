@@ -1,0 +1,14 @@
+[manager]
+show_symlink = false
+
+[opener]
+edit = [
+    { run = 'nvim "$@"', block = true },
+    { run = 'explorer.exe "$(wslpath -aw $0)"', desc = '[WSL] Open in Windows', orphan = true }
+]
+open = [
+    { run = 'explorer.exe "$(wslpath -aw $0)"', desc = '[WSL] Open in Windows', orphan = true }
+]
+reveal = [
+    { run = 'explorer.exe "$(wslpath -aw $(dirname "$0"))"', desc = '[WSL] Reveal in Windows', orphan = true }
+]
