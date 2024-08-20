@@ -18,3 +18,11 @@ prepend_keymap = [
     # Shell
     { on = "S", run = 'shell "$SHELL" --block --confirm', desc = "Open shell here" },
 ]
+
+[input]
+prepend_keymap = [
+
+    # Close out of input boxes with one ESC press
+    { on = "<Esc>", run = "close", desc = "Cancel input" },
+
+]
