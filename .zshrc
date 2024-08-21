@@ -8,6 +8,8 @@ export EDITOR='nvim'
 # Add extra PATH dirs
 path+=(~/.local/bin)
 path+=(/usr/local/go/bin)
+# Go tools
+path+=(~/go/bin)
 export PATH
 
 # Set up dotfiles management system alias
