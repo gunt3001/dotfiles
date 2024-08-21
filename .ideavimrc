@@ -1,0 +1,95 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+" Set leader
+let mapleader=" "
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+
+" Do incremental searching.
+set incsearch
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+" relative line number
+" set number relativenumber
+
+" ignore case in search patterns
+set ignorecase
+
+" Display current mode
+set showmode
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+" Easymotion
+set easymotion
+" Which-Key
+set which-key
+
+" --- Key mappings ---
+" Note: Ideavim key mappings only apply when in the editor window.
+" Other key mappings are defined within the IDE's keymap settings (such as toggling project sidebar).
+
+"" Toggling Sidebar with \ key
+"" NOTE: This key mapping only opens the sidebar. To close it, set IDE keymap "Hide Active Tool Window"
+"" Also, this only works when the editor window is active.
+nmap \\ <Action>(ActivateProjectToolWindow)
+
+" Quick window navigation
+map <C-J> <C-W>j
+map <C-K> <C-W>k
+map <C-L> <C-W>l
+map <C-H> <C-W>h
+
+"" Easymotion mappings
+"" Use single leader for Easymotion built-in keys
+"" map <Leader> <Plug>(easymotion-prefix)
+"" Map f to easymotion search-n
+nmap <Leader>f <Plug>(easymotion-sn)
+
+"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+"" Map \r to the Reformat Code action
+"map \r <Action>(ReformatCode)
+
+"" Map <leader>d to start debug
+"map <leader>d <Action>(Debug)
+
+"" Map \b to toggle the breakpoint on the current line
+"map \b <Action>(ToggleLineBreakpoint)
+
+"" Format document with <Leader>+F
+nmap <Leader>F <Action>(ReformatCode)
+
+"" Finding things (Telescope)
+"" Find in files (grep)
+nmap <Leader>sg <Action>(FindInPath)
+"" Find files
+nmap <Leader>sf <Action>(GotoFile)
+"" Go to recent file
+nmap <Leader>s. <Action>(RecentFiles)
+"" Go to open file
+nmap <Leader><Leader> <Action>(Switcher)
+
+
+"" Splitting screen
+nmap <Leader>ws <Action>(SplitHorizontally)
+nmap <Leader>wv <Action>(SplitVertically)
+
+"" Autocompletion
+imap <C-y> <Action>(EditorChooseLookupItemReplace)
+"" Copilot Autocompletion
+imap <C-CR> <Action>(copilot.applyInlays)
+
+"" Activate terminal with <Leader>wt
+nmap <Leader>wt <Action>(ActivateTerminalToolWindow)
