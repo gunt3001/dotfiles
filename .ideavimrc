@@ -98,3 +98,9 @@ nmap <Leader>wt <Action>(ActivateTerminalToolWindow)
 "" LSP commands
 "" Go to references
 nmap gr <Action>(GotoDeclaration)
+
+"" Handler mapping
+"" Set handler for keys which have both IDE functions and IdeaVim functions
+
+" Use ctrl-w to close window in normal mode, and delete previous word in insert mode
+sethandler <C-w> n-v:ide i:vim
