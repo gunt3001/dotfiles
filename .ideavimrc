@@ -36,6 +36,7 @@ Plug 'tpope/vim-commentary'
 set easymotion
 " Which-Key
 set which-key
+set notimeout
 
 " --- Key mappings ---
 " Note: Ideavim key mappings only apply when in the editor window.
@@ -93,3 +94,7 @@ imap <C-CR> <Action>(copilot.applyInlays)
 
 "" Activate terminal with <Leader>wt
 nmap <Leader>wt <Action>(ActivateTerminalToolWindow)
+
+"" LSP commands
+"" Go to references
+nmap gr <Action>(GotoDeclaration)
