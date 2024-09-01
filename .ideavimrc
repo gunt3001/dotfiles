@@ -84,8 +84,8 @@ nmap <Leader><Leader> <Action>(Switcher)
 
 
 "" Splitting screen
-nmap <Leader>ws <Action>(SplitHorizontally)
-nmap <Leader>wv <Action>(SplitVertically)
+nmap <C-w>s <Action>(SplitHorizontally)
+nmap <C-w>v <Action>(SplitVertically)
 
 "" Autocompletion
 imap <C-y> <Action>(EditorChooseLookupItemReplace)
@@ -102,5 +102,5 @@ nmap gr <Action>(GotoDeclaration)
 "" Handler mapping
 "" Set handler for keys which have both IDE functions and IdeaVim functions
 
-" Use ctrl-w to close window in normal mode, and delete previous word in insert mode
-sethandler <C-w> n-v:ide i:vim
+" Use ctrl-w to always be in vim mode (window management in normal mode, delete word in insert mode)
+sethandler <C-w> a:vim
