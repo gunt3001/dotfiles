@@ -11,7 +11,7 @@ config.default_prog = { 'pwsh' }
 
 -- Font & Colors
 config.color_scheme = "Catppuccin Mocha" -- or Macchiato, Frappe, Latte
-config.font = wezterm.font 'CaskaydiaCove Nerd Font'
+config.font = wezterm.font 'Cascadia Code NF'
 -- Window
 config.hide_tab_bar_if_only_one_tab = true
 config.window_frame = {
