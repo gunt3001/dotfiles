@@ -98,6 +98,8 @@ nmap <Leader>wt <Action>(ActivateTerminalToolWindow)
 "" LSP commands
 "" Go to references
 nmap gr <Action>(GotoDeclaration)
+"" Go to implementation
+nmap gi <Action>(GotoImplementation)
 
 "" Handler mapping
 "" Set handler for keys which have both IDE functions and IdeaVim functions
