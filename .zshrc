@@ -38,7 +38,7 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
 # History is shared between instances immediately (effective after new prompts)
-setopt SHARE_HISTORY
+# setopt SHARE_HISTORY
 
 # Enable case insensitive autocomplete and middle-of-word completion
 zstyle ':completion:*' completer _complete
