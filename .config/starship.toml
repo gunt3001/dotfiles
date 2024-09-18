@@ -1,5 +1,5 @@
 format = '''
-[](fg:blue)$os$hostname[](fg:blue bg:surface1)[ ](bg:surface1)$username[](fg:surface1) $directory $git_branch$git_status$git_state
+[](fg:blue)$os$hostname[](fg:blue bg:surface1)[ ](bg:surface1)$username[](fg:surface1) $directory$git_branch$git_status$git_state$time
 $character
 '''
 
@@ -32,13 +32,17 @@ truncation_length = 5
 truncation_symbol = '.../'
 
 [git_branch]
-format = '[](surface1)[$symbol$branch(:$remote_branch)]($style)'
+format = ' [](surface1)[$symbol$branch(:$remote_branch)]($style)'
 symbol = ' '
 style = 'bold bg:surface1 fg:mauve'
 
 [git_status]
 style = 'bold bg:surface1 fg:red'
 format = '([ $all_status$ahead_behind]($style))[](surface1)'
+
+[time]
+disabled = false
+format = ' [$time]($style)'
 
 [character]
 success_symbol = '[❯](bold fg:bright-white)'
