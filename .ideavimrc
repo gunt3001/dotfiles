@@ -79,6 +79,8 @@ nmap <Leader>sg <Action>(FindInPath)
 nmap <Leader>sf <Action>(GotoFile)
 "" Go to recent file
 nmap <Leader>s. <Action>(RecentFiles)
+"" Find symbols
+nmap <Leader>ss <Action>(GotoSymbol)
 "" Go to open file
 nmap <Leader><Leader> <Action>(Switcher)
 
