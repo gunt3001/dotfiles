@@ -27,6 +27,8 @@ config.window_frame = {
   -- Default to 10.0 on Windows but 12.0 on other systems
   font_size = 10.0,
 }
+-- Don't resize window when changing font size
+config.adjust_window_size_when_changing_font_size = false
 
 -- Hotkeys
 config.keys = {
