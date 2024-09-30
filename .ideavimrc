@@ -89,6 +89,9 @@ nmap <Leader><Leader> <Action>(Switcher)
 nmap <C-w>s <Action>(SplitHorizontally)
 nmap <C-w>v <Action>(SplitVertically)
 
+"" Code folding
+nmap zf <Action>(RiderCollapseToDefinitions)
+
 "" Autocompletion
 imap <C-y> <Action>(EditorChooseLookupItemReplace)
 "" Copilot Autocompletion
