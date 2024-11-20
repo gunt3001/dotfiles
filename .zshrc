@@ -7,7 +7,6 @@ export EDITOR='nvim'
 
 # Add extra PATH dirs
 path+=(~/.local/bin)
-path+=(/usr/local/go/bin)
 path+=(/opt/homebrew/bin)
 export PATH
 
