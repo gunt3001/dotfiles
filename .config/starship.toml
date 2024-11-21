@@ -12,6 +12,7 @@ style = 'bold bg:blue fg:base'
 [os.symbols]
 Windows = ""
 Ubuntu = ""
+Macos = ""
 
 [hostname]
 ssh_only = false
