@@ -29,6 +29,7 @@ umask 002
 eval "$(starship init zsh)"
 
 # Enable command history via arrow keys
+mkdir -p ~/.local/state/zsh
 HISTFILE=~/.local/state/zsh/history
 HISTSIZE=10000000
 SAVEHIST=10000000
