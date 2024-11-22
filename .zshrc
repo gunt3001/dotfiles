@@ -98,8 +98,7 @@ source "${XDG_CONFIG_HOME:-$HOME/.config}"/fzf/fzf.zsh # fzf - default hotkey C-
 eval "$(zoxide init zsh)"
 
 # fnm
-FNM_PATH="/home/gun/.local/share/fnm"
-if [ -d "$FNM_PATH" ]; then
-  export PATH="/home/gun/.local/share/fnm:$PATH"
-  eval "`fnm env`"
+FNM_PATH="/opt/homebrew/bin/fnm"
+if [ -f "$FNM_PATH" ]; then
+  eval "`fnm env --use-on-cd --shell zsh`"
 fi
