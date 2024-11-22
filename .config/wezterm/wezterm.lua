@@ -12,6 +12,7 @@ config.default_prog = { "zsh" }
 -- Font & Colors
 config.color_scheme = "Catppuccin Mocha" -- or Macchiato, Frappe, Latte
 config.font = wezterm.font("Cascadia Code NF")
+config.font_size = 20
 -- Window
 config.hide_tab_bar_if_only_one_tab = false
 config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
