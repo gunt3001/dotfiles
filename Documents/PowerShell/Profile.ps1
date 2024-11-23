@@ -14,3 +14,8 @@ function Dotfiles-Config {
 
 # Set an alias for `config` to use the function
 Set-Alias config Dotfiles-Config
+
+# Activate Starship (https://starship.rs/guide/#%F0%9F%9A%80-installation)
+if (Get-Command starship -ErrorAction SilentlyContinue) {
+    Invoke-Expression (&starship init powershell)
+}
