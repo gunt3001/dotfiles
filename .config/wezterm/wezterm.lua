@@ -36,5 +36,14 @@ config.window_frame = {
 -- Don't resize window when changing font size
 config.adjust_window_size_when_changing_font_size = false
 
+config.keys = {
+	-- Use Cmd+Shift+P to activate command pallete (default Ctrl+Shift+P)
+	{
+		key = "p",
+		mods = "CMD|SHIFT",
+		action = wezterm.action.ActivateCommandPalette,
+	},
+}
+
 -- and finally, return the configuration to wezterm
 return config
