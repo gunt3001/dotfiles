@@ -17,9 +17,9 @@ config.font = wezterm.font_with_fallback({
 })
 config.font_size = 20
 -- Window
-config.hide_tab_bar_if_only_one_tab = false
-config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
-config.integrated_title_button_style = "MacOsNative"
+config.hide_tab_bar_if_only_one_tab = true
+-- config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
+-- config.integrated_title_button_style = "MacOsNative"
 config.window_frame = {
 	-- The font used in the tab bar.
 	-- Roboto Bold is the default; this font is bundled
