@@ -12,8 +12,20 @@ function Dotfiles-Config {
     git --git-dir=$DotfilesGitDir --work-tree=$HOME @Args
 }
 
+# Same, for Lazygit command
+function Dotfiles-Config-Lazygit {
+    param (
+        [Parameter(ValueFromRemainingArguments=$true)]
+        [string[]]$Args
+    )
+
+    # Construct the git command with the custom --git-dir and --work-tree
+    lazygit --git-dir=$DotfilesGitDir --work-tree=$HOME @Args
+}
+
 # Set an alias for `config` to use the function
 Set-Alias config Dotfiles-Config
+Set-Alias lazyconfig Dotfiles-Config-Lazygit
 
 # Activate Starship (https://starship.rs/guide/#%F0%9F%9A%80-installation)
 if (Get-Command starship -ErrorAction SilentlyContinue) {
