@@ -8,8 +8,7 @@ export EDITOR='nvim'
 # Add extra PATH dirs
 path+=(~/.local/bin)
 path+=(/opt/homebrew/bin)
-path+=(/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin)
-path+=(/Applications/Docker.app/Contents/Resources/bin)
+path+=(/usr/local/bin)
 export PATH
 
 # Set up dotfiles management system alias
