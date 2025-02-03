@@ -15,7 +15,7 @@ config.font = wezterm.font_with_fallback({
 	"Cascadia Code NF",
 	"Hiragino Maru Gothic ProN",
 })
-config.font_size = 20
+config.font_size = 18
 -- Window
 config.hide_tab_bar_if_only_one_tab = true
 -- config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
