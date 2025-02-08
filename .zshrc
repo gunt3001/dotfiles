@@ -29,6 +29,11 @@ umask 002
 # https://starship.rs/guide/
 eval "$(starship init zsh)"
 
+# pyenv Python Version Manager
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
+
 # Enable command history via arrow keys
 mkdir -p ~/.local/state/zsh
 HISTFILE=~/.local/state/zsh/history
