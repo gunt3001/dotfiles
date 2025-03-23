@@ -34,7 +34,9 @@ export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - zsh)"
 
-# .NET
+# .NET Environment Variables
+# Note: This is the default PATH when installed manually or via Jetbrains Rider
+# Installation via Microsoft's official installer or Homebrew may have a different path
 export DOTNET_ROOT=$HOME/.dotnet
 export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
 
