@@ -1,0 +1,76 @@
+format = '''
+[](fg:blue)$os$hostname[](fg:blue bg:surface1)[ ](bg:surface1)$username[](fg:surface1) $directory$git_branch$git_status$git_state$time
+$character'''
+
+palette = "catppuccin_mocha"
+
+[os]
+disabled = false
+style = 'bold bg:blue fg:base'
+
+[os.symbols]
+Windows = ""
+Ubuntu = ""
+Macos = ""
+
+[hostname]
+ssh_only = false
+format = '[ $ssh_symbol$hostname]($style)'
+style = 'bold bg:blue fg:base'
+ssh_symbol = ' '
+
+[username]
+show_always = true
+format = '[$user]($style)'
+style_user = 'bold bg:surface1'
+style_root = 'bold fg:red bg:surface1'
+
+[directory]
+format = '[](surface1)[📁 $path]($style)[$read_only]($read_only_style)[](surface1)'
+style = 'bold bg:surface1'
+truncation_length = 5
+truncation_symbol = '.../'
+
+[git_branch]
+format = ' [](surface1)[$symbol$branch(:$remote_branch)]($style)'
+symbol = ' '
+style = 'bold bg:surface1 fg:mauve'
+
+[git_status]
+style = 'bold bg:surface1 fg:red'
+format = '([ $all_status$ahead_behind]($style))[](surface1)'
+
+[time]
+disabled = false
+format = ' [$time]($style)'
+
+[character]
+success_symbol = '[❯](bold fg:bright-white)'
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
