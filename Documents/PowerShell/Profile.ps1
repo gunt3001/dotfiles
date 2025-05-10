@@ -14,3 +14,7 @@ function Dotfiles-Config {
 
 # Set an alias for `config` to use the function
 Set-Alias config Dotfiles-Config
+
+# Change Komorebi config dir
+# https://lgug2z.github.io/komorebi/common-workflows/komorebi-config-home.html
+$Env:KOMOREBI_CONFIG_HOME = "$HOME\.config\komorebi"

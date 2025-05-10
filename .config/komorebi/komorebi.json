@@ -1,0 +1,62 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.36/schema.json",
+  "animation": {
+    "enabled": true,
+    "fps": 120,
+    "style": "EaseInOutCubic",
+    "duration": 120
+  },
+  "app_specific_configuration_path": "C:/Users/gun/.config/komorebi/applications.json",
+  "window_hiding_behaviour": "Cloak",
+  "cross_monitor_move_behaviour": "Insert",
+  "default_workspace_padding": 0,
+  "default_container_padding": -1,
+  "border": false,
+  "theme": {
+    "palette": "Catppuccin",
+    "name": "Mocha"
+  },
+  "mouse_follows_focus": false,
+  "monitors": [
+    {
+      "workspaces": [
+        {
+          "name": "1",
+          "layout": "UltrawideVerticalStack"
+        },
+        {
+          "name": "2",
+          "layout": "UltrawideVerticalStack"
+        },
+        {
+          "name": "3",
+          "layout": "UltrawideVerticalStack"
+        },
+        {
+          "name": "4",
+          "layout": "UltrawideVerticalStack"
+        },
+        {
+          "name": "5",
+          "layout": "UltrawideVerticalStack"
+        },
+        {
+          "name": "6",
+          "layout": "UltrawideVerticalStack"
+        },
+        {
+          "name": "7",
+          "layout": "UltrawideVerticalStack"
+        },
+        {
+          "name": "8",
+          "layout": "UltrawideVerticalStack"
+        },
+        {
+          "name": "9",
+          "layout": "UltrawideVerticalStack"
+        }
+      ]
+    }
+  ]
+}
