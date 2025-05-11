@@ -1,5 +1,14 @@
 {
   "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/master/schema.asc.json",
+  "1Password": {
+    "ignore": [
+      {
+        "kind": "Exe",
+        "id": "1Password.exe",
+        "matching_strategy": "Equals"
+      }
+    ]
+  },
   "Ableton Live": {
     "ignore": [
       {
@@ -1444,6 +1453,15 @@
           "matching_strategy": "Equals"
         }
       ]
+    ]
+  },
+  "Microsoft Active Accessibility": {
+    "ignore": [
+      {
+        "kind": "Class",
+        "id": "#32770",
+        "matching_strategy": "Legacy"
+      }
     ]
   },
   "Microsoft Edge": {
