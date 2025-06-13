@@ -3,7 +3,7 @@
 --
 -- See the kickstart.nvim README for more information
 return {
-  'github/copilot.vim', -- GitHub Copilot
+  -- 'github/copilot.vim', -- GitHub Copilot
 }
 
 -- vim: ts=2 sts=2 sw=2 et
