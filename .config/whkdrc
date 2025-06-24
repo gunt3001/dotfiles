@@ -1,7 +1,7 @@
 .shell pwsh
 
 # Service mode
-alt + shift + r         : taskkill /f /im whkd.exe; Start-Process whkd -WindowStyle hidden; komorebic reload-configuration # Reload all config
+alt + shift + r         : komorebic stop --whkd --bar; komorebic start --whkd --bar # Restart all related processes
 alt + escape            : komorebic retile # Retile windows
 alt + 0					: komorebic retile # Alternate key for retiling
 alt + shift + p         : komorebic toggle-pause
