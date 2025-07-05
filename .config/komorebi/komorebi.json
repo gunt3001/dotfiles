@@ -64,6 +64,11 @@
       "kind": "Title",
       "id": "Affinity Photo",
       "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "Taiga.exe",
+      "matching_strategy": "Equals"
     }
   ]
 }
