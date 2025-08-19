@@ -4,7 +4,7 @@
     "enabled": true,
     "fps": 120,
     "style": "EaseInOutCubic",
-    "duration": 120
+    "duration": 160
   },
   "app_specific_configuration_path": "C:/Users/gun/.config/komorebi/applications.json",
   "window_hiding_behaviour": "Cloak",
