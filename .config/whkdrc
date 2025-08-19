@@ -6,6 +6,7 @@ alt + escape            : komorebic retile # Retile windows
 alt + 0                 : komorebic retile # Alternate key for retiling
 alt + numpad0           : komorebic retile
 alt + shift + p         : komorebic toggle-pause
+alt + shift + oem_2     : komorebic toggle-shortcuts # ? key for shortcut hints pop-up
 
 # Focus windows
 alt + h                 : komorebic focus left
