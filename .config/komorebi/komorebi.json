@@ -70,5 +70,12 @@
       "id": "Taiga.exe",
       "matching_strategy": "Equals"
     }
+  ],
+  "floating_applications": [
+    {
+      "kind": "Exe",
+      "id": "LunaTranslator.exe",
+      "matching_strategy": "Equals"
+    }
   ]
 }
