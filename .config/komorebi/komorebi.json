@@ -69,6 +69,11 @@
       "kind": "Exe",
       "id": "Taiga.exe",
       "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Exe",
+      "id": "gakumas.exe",
+      "matching_strategy": "Equals"
     }
   ],
   "floating_applications": [
