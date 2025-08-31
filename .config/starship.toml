@@ -1,6 +1,7 @@
 format = '''
-[](fg:blue)$os$hostname[](fg:blue bg:surface1)[ ](bg:surface1)$username[](fg:surface1) $directory$git_branch$git_status$git_state$time
-$character'''
+[](fg:blue)$os$hostname[](fg:blue bg:surface1)[ ](bg:surface1)$username[](fg:surface1) $directory$git_branch$git_status$git_state$python$time
+$character
+'''
 
 palette = "catppuccin_mocha"
 
@@ -39,6 +40,10 @@ style = 'bold bg:surface1 fg:mauve'
 [git_status]
 style = 'bold bg:surface1 fg:red'
 format = '([ $all_status$ahead_behind]($style))[](surface1)'
+
+[python]
+format = ' [](surface1)[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\))]($style)[](surface1)'
+style = 'bold bg:surface1'
 
 [time]
 disabled = false
