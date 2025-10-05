@@ -15,8 +15,12 @@ export PATH
 # Set up dotfiles management system alias
 # Run 'config' in place of 'git' command to manage
 # Read more at: https://www.atlassian.com/git/tutorials/dotfiles
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-alias lazyconfig='/usr/local/bin/lazygit --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+config() {
+    "$(which git)" --git-dir="$HOME/.cfg/" --work-tree="$HOME" "$@"
+}
+lazyconfig() {
+    "$(which lazygit)" --git-dir="$HOME/.cfg/" --work-tree="$HOME" "$@"
+}
 
 # Other aliases
 alias l='ls -lah --color'
