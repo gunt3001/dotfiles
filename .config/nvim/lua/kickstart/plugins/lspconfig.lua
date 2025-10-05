@@ -161,7 +161,7 @@ return {
       local servers = {
         -- clangd = {},
         -- Go
-        gopls = {},
+        -- gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -204,10 +204,10 @@ return {
         },
 
         -- dotnet LSP
-        omnisharp = {},
+        -- omnisharp = {},
 
         -- Typesript and Javascript LSP
-        tsserver = {},
+        -- tsserver = {},
       }
 
       -- Ensure the servers and tools above are installed
@@ -228,9 +228,9 @@ return {
         'isort',
         -- dotnet using omnisharp
         -- alternative to consider: csharp-ls
-        'omnisharp',
+        -- 'omnisharp',
         -- Go
-        'gopls',
+        -- 'gopls',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
