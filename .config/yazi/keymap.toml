@@ -1,4 +1,4 @@
-[manager]
+[mgr]
 prepend_keymap = [
     # Override default yank-cut-paste behavior to use 2-action keys like ranger
     { on = [ "y", "y" ], run = "yank", desc = "Yank selected files" },
