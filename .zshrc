@@ -36,6 +36,8 @@ eval "$(starship init zsh)"
 
 # Enable command history via arrow keys
 HISTFILE=~/.local/state/zsh/history
+# Ensure HISTFILE directory exists
+mkdir -p "${HISTFILE%/*}"
 HISTSIZE=10000000
 SAVEHIST=10000000
 # Don't save and find duplicates
