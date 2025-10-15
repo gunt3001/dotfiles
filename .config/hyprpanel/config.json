@@ -35,8 +35,8 @@
       ],
       "right": [
         "media",
-        "volume",
         "systray",
+        "volume",
         "clock",
         "notifications"
       ]
