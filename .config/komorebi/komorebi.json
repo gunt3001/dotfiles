@@ -6,6 +6,7 @@
     "style": "EaseInOutCubic",
     "duration": 160
   },
+  "resize_delta": 200,
   "app_specific_configuration_path": "C:/Users/gun/.config/komorebi/applications.json",
   "window_hiding_behaviour": "Cloak",
   "cross_monitor_move_behaviour": "Insert",
