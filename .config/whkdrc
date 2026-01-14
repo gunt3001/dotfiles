@@ -30,6 +30,10 @@ alt + shift + oem_minus : komorebic resize-axis vertical decrease
 alt + f                 : komorebic toggle-float
 alt + shift + f         : komorebic toggle-monocle
 
+# Switching layouts
+alt + oem_2				: komorebic change-layout ultrawide-vertical-stack # alt+/
+alt + oem_period		: komorebic change-layout bsp
+
 # Window manager options
 
 # Workspaces
