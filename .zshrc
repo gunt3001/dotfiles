@@ -12,6 +12,21 @@ path+=(/usr/local/go/bin)
 path+=(~/go/bin)
 export PATH
 
+# =======================================================================
+# Pass-through select environment variables when running inside container
+_container_env_dir="/etc/container_environment"
+_container_env_allowlist=(
+    DOCKER_API_VERSION
+)
+
+for _name in "${_container_env_allowlist[@]}"; do
+  _file="${_container_env_dir}/${_name}"
+  [[ -r "$_file" ]] && export "${_name}=$(<"$_file")"
+done
+
+unset _container_env_dir _container_env_allowlist _name _file
+# =======================================================================
+
 # Set up dotfiles management system alias
 # Run 'config' in place of 'git' command to manage
 # Read more at: https://www.atlassian.com/git/tutorials/dotfiles
