@@ -11,6 +11,12 @@ path+=(/opt/homebrew/bin)
 path+=(/usr/local/bin)
 export PATH
 
+# Set standard XDG Paths
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+
 # Set up dotfiles management system alias
 # Run 'config' in place of 'git' command to manage
 # Read more at: https://www.atlassian.com/git/tutorials/dotfiles
@@ -114,3 +120,11 @@ FNM_PATH="/opt/homebrew/bin/fnm"
 if [ -f "$FNM_PATH" ]; then
   eval "`fnm env --use-on-cd --shell zsh`"
 fi
+
+# pnpm
+export PNPM_HOME="/Users/gun/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
