@@ -42,7 +42,7 @@ eval "$(pyenv init - zsh)"
 
 # .NET Environment Variables
 # Note: This is the default PATH when installed manually or via Jetbrains Rider
-# Installation via Microsoft's official installer or Homebrew may have a different path
+# Installation via Microsoft's official installer or Homebrew may have a different path (usually /usr/local/share/dotnet/sdk)
 export DOTNET_ROOT=$HOME/.dotnet
 export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
 
