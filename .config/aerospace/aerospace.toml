@@ -120,6 +120,11 @@ automatically-unhide-macos-hidden-apps = false
     # Toggle floating for active window
     alt-f = ['layout floating tiling', 'mode main']
 
+    # Close active window
+    # In most cases, this is equivalent to macOS native Cmd-W, but in some tabbed application
+    # this is useful for closing the window (akin to clicking the red x button) instead of closing the current tab 
+    alt-q = 'close --quit-if-last-window'
+
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
     alt-1 = 'workspace 1'
     alt-2 = 'workspace 2'
