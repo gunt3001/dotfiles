@@ -17,8 +17,7 @@ Install the binary via your preferred package manager:
 To pull this repo and apply the configurations to your home directory:
 
 ```bash
-# Replace YOUR_USERNAME with your GitHub handle
-chezmoi init --apply [https://github.com/gunt3001/dotfiles.git](https://github.com/gunt3001/dotfiles.git)
+chezmoi init --apply https://github.com/gunt3001/dotfiles.git
 ```
 
 ---
