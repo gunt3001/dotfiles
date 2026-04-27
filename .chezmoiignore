@@ -7,6 +7,9 @@
 # note: Windows config are synced with OneDrive and not managed by Chezmoi
 .config/mpv/
 
+# Neovim
+.config/nvim/
+
 {{ end }}
 
 # Mac-specific Configurations
