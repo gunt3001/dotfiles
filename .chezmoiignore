@@ -1,6 +1,12 @@
 # UNIX only
 {{ if and (ne .chezmoi.os "linux") (ne .chezmoi.os "darwin") }}
+
 .zshrc
+
+# mpv config
+# note: Windows config are synced with OneDrive and not managed by Chezmoi
+.config/mpv/
+
 {{ end }}
 
 # Mac-specific Configurations
