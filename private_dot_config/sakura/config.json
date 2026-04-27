@@ -1,0 +1,8 @@
+{
+    "ApiUrl": "http://192.168.1.12:9091/transmission/rpc",
+    "DownloadPath": "/volume1/Anime/Current",
+    "SearchQuery": "[SubsPlease] (1080p)",
+    "ExistingFilesCheckPath": "/volume1/Anime/Current",
+    "TorrentClient": "TransmissionBt"
+  }
+  
