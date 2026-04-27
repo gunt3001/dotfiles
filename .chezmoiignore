@@ -10,6 +10,9 @@
 # Neovim
 .config/nvim/
 
+# Yazi
+.config/yazi/
+
 {{ end }}
 
 # Mac-specific Configurations

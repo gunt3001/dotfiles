@@ -1,0 +1,28 @@
+[mgr]
+prepend_keymap = [
+    # Override default yank-cut-paste behavior to use 2-action keys like ranger
+    { on = [ "y", "y" ], run = "yank", desc = "Yank selected files" },
+    { on = [ "d", "d" ], run = "yank --cut", desc = "Cut selected files" },
+    { on = [ "p", "p" ], run = "paste", desc = "Paste" },
+    { on = [ "p", "P" ], run = "paste --force", desc = "Paste (Overwrite)" },
+    { on = [ "d", "D" ], run = "remove --permanently", desc = "Delete" },
+
+    # Paste Symlink
+    { on = [ "p", "s" ], run = "link", desc = "Create symbolic link (absolute)" },
+    { on = [ "p", "S" ], run = "link --relative", desc = "Create symbolic link (relative)" },
+
+    # Rename keys
+    { on = "I", run = "rename --cursor=start", desc = "Rename (Insert)" },
+    { on = "A", run = "rename --cursor=end", desc = "Rename (Append)" },
+
+    # Shell
+    { on = "S", run = 'shell "$SHELL" --block --confirm', desc = "Open shell here" },
+]
+
+[input]
+prepend_keymap = [
+
+    # Close out of input boxes with one ESC press
+    { on = "<Esc>", run = "close", desc = "Cancel input" },
+
+]
