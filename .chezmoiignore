@@ -1,3 +1,5 @@
+README.md
+
 # UNIX only
 {{ if and (ne .chezmoi.os "linux") (ne .chezmoi.os "darwin") }}
 
