@@ -1,0 +1,5 @@
+# Mac-specific Configurations
+{{ if ne .chezmoi.os "darwin" }}
+.config/aerospace/
+{{ end }}
+
