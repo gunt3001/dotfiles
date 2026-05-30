@@ -1,0 +1,5 @@
+{{- $is_ultrawide = promptBoolOnce . "is_ultrawide" "Do you want to configure for Ultrawide monitor setup? (for Windows-based window manager)" -}}
+
+[data]
+    is_ultrawide = {{ $is_ultrawide }}
+

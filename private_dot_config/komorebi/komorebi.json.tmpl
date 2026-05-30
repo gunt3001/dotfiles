@@ -19,6 +19,46 @@
   "mouse_follows_focus": false,
   "monitors": [
     {
+      {{- if .is_ultrawide }}
+      "workspaces": [
+        {
+          "name": "1",
+          "layout": "UltrawideVerticalStack"
+        },
+        {
+          "name": "2",
+          "layout": "UltrawideVerticalStack"
+        },
+        {
+          "name": "3",
+          "layout": "UltrawideVerticalStack"
+        },
+        {
+          "name": "4",
+          "layout": "UltrawideVerticalStack"
+        },
+        {
+          "name": "5",
+          "layout": "UltrawideVerticalStack"
+        },
+        {
+          "name": "6",
+          "layout": "UltrawideVerticalStack"
+        },
+        {
+          "name": "7",
+          "layout": "UltrawideVerticalStack"
+        },
+        {
+          "name": "8",
+          "layout": "UltrawideVerticalStack"
+        },
+        {
+          "name": "9",
+          "layout": "UltrawideVerticalStack"
+        }
+      ]
+      {{- else }}
       "workspaces": [
         {
           "name": "1",
@@ -57,6 +97,7 @@
           "layout": "BSP"
         }
       ]
+      {{- end }}
     }
   ],
   "manage_rules": [
