@@ -26,7 +26,7 @@ README.md
 # Windows-specific Configurations
 {{ if ne .chezmoi.os "windows" }}
 .config/komorebi/
-# .config/whkdrc
+.config/whkdrc
 Documents/PowerShell/Profile.ps1
 {{ end }}
 
