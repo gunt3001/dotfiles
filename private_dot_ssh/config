@@ -1,0 +1,12 @@
+# Configuration for kmabwp.com
+Host kmabwp.com
+    HostName kmabwp.com
+    User gun
+    Port 13823
+
+# Configuration for github-formal
+Host github-formal
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_ed25519_formal
+    IdentitiesOnly yes
