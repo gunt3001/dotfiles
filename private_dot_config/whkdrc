@@ -1,0 +1,73 @@
+.shell pwsh
+
+# Service mode
+alt + shift + r         : komorebic stop --whkd --bar; komorebic start --whkd # Restart all related processes
+alt + escape            : komorebic retile # Retile windows
+alt + 0                 : komorebic retile # Alternate key for retiling
+alt + numpad0           : komorebic retile
+alt + shift + p         : komorebic toggle-pause
+alt + shift + oem_2     : komorebic toggle-shortcuts # ? key for shortcut hints pop-up
+
+# Focus windows
+alt + h                 : komorebic focus left
+alt + j                 : komorebic focus down
+alt + k                 : komorebic focus up
+alt + l                 : komorebic focus right
+
+# Move windows
+alt + shift + h         : komorebic move left
+alt + shift + j         : komorebic move down
+alt + shift + k         : komorebic move up
+alt + shift + l         : komorebic move right
+
+# Resize
+alt + oem_plus          : komorebic resize-axis horizontal increase
+alt + oem_minus         : komorebic resize-axis horizontal decrease
+alt + shift + oem_plus  : komorebic resize-axis vertical increase
+alt + shift + oem_minus : komorebic resize-axis vertical decrease
+
+# Manipulate windows
+alt + f                 : komorebic toggle-float
+alt + shift + f         : komorebic toggle-monocle
+
+# Window manager options
+
+# Workspaces
+alt + 1                 : komorebic focus-workspace 0
+alt + 2                 : komorebic focus-workspace 1
+alt + 3                 : komorebic focus-workspace 2
+alt + 4                 : komorebic focus-workspace 3
+alt + 5                 : komorebic focus-workspace 4
+alt + 6                 : komorebic focus-workspace 5
+alt + 7                 : komorebic focus-workspace 6
+alt + 8                 : komorebic focus-workspace 7
+alt + 9                 : komorebic focus-workspace 8
+alt + numpad1           : komorebic focus-workspace 0
+alt + numpad2           : komorebic focus-workspace 1
+alt + numpad3           : komorebic focus-workspace 2
+alt + numpad4           : komorebic focus-workspace 3
+alt + numpad5           : komorebic focus-workspace 4
+alt + numpad6           : komorebic focus-workspace 5
+alt + numpad7           : komorebic focus-workspace 6
+alt + numpad8           : komorebic focus-workspace 7
+alt + numpad9           : komorebic focus-workspace 8
+
+# Move windows across workspaces
+alt + shift + 1         : komorebic move-to-workspace 0
+alt + shift + 2         : komorebic move-to-workspace 1
+alt + shift + 3         : komorebic move-to-workspace 2
+alt + shift + 4         : komorebic move-to-workspace 3
+alt + shift + 5         : komorebic move-to-workspace 4
+alt + shift + 6         : komorebic move-to-workspace 5
+alt + shift + 7         : komorebic move-to-workspace 6
+alt + shift + 8         : komorebic move-to-workspace 7
+alt + shift + 9         : komorebic move-to-workspace 8
+alt + shift + numpad1   : komorebic move-to-workspace 0
+alt + shift + numpad2   : komorebic move-to-workspace 1
+alt + shift + numpad3   : komorebic move-to-workspace 2
+alt + shift + numpad4   : komorebic move-to-workspace 3
+alt + shift + numpad5   : komorebic move-to-workspace 4
+alt + shift + numpad6   : komorebic move-to-workspace 5
+alt + shift + numpad7   : komorebic move-to-workspace 6
+alt + shift + numpad8   : komorebic move-to-workspace 7
+alt + shift + numpad9   : komorebic move-to-workspace 8
