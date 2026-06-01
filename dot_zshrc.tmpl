@@ -15,6 +15,11 @@ path+=(/usr/local/go/bin)
 {{- end }}
 export PATH
 
+# Override hostname if set
+{{- if .hostname_override }}
+export HOST={{ .hostname_override }}
+{{- end }}
+
 {{- if eq .chezmoi.os "darwin" }}
 # Set standard XDG Paths (for macOS)
 export XDG_CONFIG_HOME="$HOME/.config"

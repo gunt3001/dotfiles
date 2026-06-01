@@ -16,7 +16,12 @@ Macos = ""
 
 [hostname]
 ssh_only = false
+# Override hostname if set
+{{- if .hostname_override }}
+format = '[ ${ssh_symbol}{{ .hostname_override }}]($style)'
+{{- else }}
 format = '[ $ssh_symbol$hostname]($style)'
+{{- end }}
 style = 'bold bg:blue fg:base'
 ssh_symbol = ' '
 
