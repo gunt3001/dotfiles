@@ -11,6 +11,8 @@
 # windows:   root=~/,C:/
 {{- if eq .chezmoi.os "darwin" }}
 root=/Volumes/Anime,~/,/
+{{- else if and (hasKey .chezmoi "osRelease") (eq .chezmoi.osRelease.id "steamos") }}
+root=~/,~/Downloads/anime/,/
 {{- else if eq .chezmoi.os "linux" }}
 root=~/,/
 {{ end }}
@@ -38,7 +40,11 @@ max_concurrency=16
 
 # enable custom keybinds
 # the keybind json file must go in ~~/script-opts
+{{- if and (hasKey .chezmoi "osRelease") (eq .chezmoi.osRelease.id "steamos") }}
+custom_keybinds=yes
+{{- else }}
 custom_keybinds=no
+{{ end }}
 
 # file-browser only shows files that are compatible with mpv by default
 # adding a file extension to this list will add it to the extension whitelist

@@ -1,2 +1,15 @@
 [
+	{
+		"key": ",",
+		"command": ["script-binding", "file_browser/dynamic/up_dir"]
+	},
+	{
+		"key": ".",
+		"command": ["script-binding", "file_browser/dynamic/down_dir"]
+	},
+	{
+		"key": "SPACE",
+		"command": ["script-binding", "file_browser/dynamic/play"]
+	}
+
 ]
