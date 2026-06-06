@@ -1,3 +1,14 @@
+# SteamDeck specific configuration
+{{- if and (hasKey .chezmoi "osRelease") (eq .chezmoi.osRelease.id "steamos") }}
+
+# Always fullscreen (required for proper resolution detection in Big Picture mode / Steam Deck
+fs=yes
+
+# Enable controller/Steam Input support (requires supported build of mpv)
+# input-gamepad=yes
+
+{{- end }}
+
 # Enable hardware acceleration by default
 hwdec=auto-safe
 
