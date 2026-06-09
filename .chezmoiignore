@@ -7,31 +7,40 @@ README.md
 
 # mpv config
 # note: Windows config are synced with OneDrive and not managed by Chezmoi
+.config/mpv/
 .config/mpv/**
 
 # Neovim
+.config/nvim/
 .config/nvim/**
 
 # Yazi
+.config/yazi/
 .config/yazi/**
 
 {{ end }}
 
 # Linux GUI DE Specific Configurations
 {{ if not .use_linux_de }}
+.config/fcitx5/
 .config/fcitx5/**
+.config/hypr/
 .config/hypr/**
+.config/hyprpanel/
 .config/hyprpanel/**
 {{ end }}
 
 # Mac-specific Configurations
 {{ if ne .chezmoi.os "darwin" }}
+.config/aerospace/
 .config/aerospace/**
+.config/paneru/
 .config/paneru/**
 {{ end }}
 
 # Windows-specific Configurations
 {{ if ne .chezmoi.os "windows" }}
+.config/komorebi/
 .config/komorebi/**
 .config/whkdrc
 Documents/PowerShell/Profile.ps1
