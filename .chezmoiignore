@@ -17,6 +17,13 @@ README.md
 
 {{ end }}
 
+# Linux GUI DE Specific Configurations
+{{ if not .use_linux_de }}
+.config/fcitx5/
+.config/hypr/
+.config/hyprpanel/
+{{ end }}
+
 # Mac-specific Configurations
 {{ if ne .chezmoi.os "darwin" }}
 .config/aerospace/
