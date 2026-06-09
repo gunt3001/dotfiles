@@ -18,6 +18,10 @@ README.md
 .config/yazi/
 .config/yazi/**
 
+# Yuni
+.config/yuni/
+.config/yuni/**
+
 {{ end }}
 
 # Linux GUI DE Specific Configurations
