@@ -1,9 +1,16 @@
-{{- $is_ultrawide := promptBoolOnce . "is_ultrawide" "Do you want to configure for Ultrawide monitor setup? (for Windows-based window manager)" false -}}
+{{ $is_ultrawide := promptBoolOnce . "is_ultrawide" "Do you want to configure for Ultrawide monitor setup? (for Windows-based window manager)" false }}
 
 # Hostname override
 {{ $promptMsg := printf "Do you want to override the hostname? (leave blank to use %s)" .chezmoi.hostname }}
 {{ $hostname_override := promptStringOnce . "hostname_override" $promptMsg "" }}
 
+# When using Linux, asks if user wants to set up dotfiles related to GUI Desktop Environment
+{{ $use_linux_de := false }}
+{{ if eq .chezmoi.os "linux" }}
+{{ $use_linux_de := promptBoolOnce . "use_linux_de" "Do you want to set up config files for GUI Desktop Environment? (Linux only)" false }}
+{{ end }}
+
 [data]
     is_ultrawide = {{ $is_ultrawide }}
     hostname_override = {{ $hostname_override | quote }}
+    use_linux_de = {{ $use_linux_de }}
