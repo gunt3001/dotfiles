@@ -12,7 +12,7 @@
 {{- if eq .chezmoi.os "darwin" }}
 root=/Volumes/Anime,~/,/
 {{- else if and (hasKey .chezmoi "osRelease") (eq .chezmoi.osRelease.id "steamos") }}
-root=~/,~/Downloads/anime/,/
+root=~/Downloads/anime/,/mnt/Anime/,/mnt/Entertainment/,~/,/
 {{- else if eq .chezmoi.os "linux" }}
 root=~/,/
 {{ end }}
