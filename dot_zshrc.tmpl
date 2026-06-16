@@ -9,6 +9,7 @@ export EDITOR='nvim'
 path+=(~/.local/bin)
 {{- if eq .chezmoi.os "darwin" }}
 path=('/opt/homebrew/bin' $path)
+path=("/opt/homebrew/lib/ruby/gems/4.0.0/bin" $path)
 path+=(/usr/local/bin)
 {{- else if eq .chezmoi.os "linux" }}
 path+=(/usr/local/go/bin)
