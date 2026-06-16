@@ -8,7 +8,7 @@ export EDITOR='nvim'
 # Add extra PATH dirs
 path+=(~/.local/bin)
 {{- if eq .chezmoi.os "darwin" }}
-path+=(/opt/homebrew/bin)
+path=('/opt/homebrew/bin' $path)
 path+=(/usr/local/bin)
 {{- else if eq .chezmoi.os "linux" }}
 path+=(/usr/local/go/bin)
