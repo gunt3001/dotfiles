@@ -40,11 +40,7 @@ max_concurrency=16
 
 # enable custom keybinds
 # the keybind json file must go in ~~/script-opts
-{{- if and (hasKey .chezmoi "osRelease") (hasKey .chezmoi.osRelease "id") (eq .chezmoi.osRelease.id "steamos") }}
 custom_keybinds=yes
-{{- else }}
-custom_keybinds=no
-{{ end }}
 
 # file-browser only shows files that are compatible with mpv by default
 # adding a file extension to this list will add it to the extension whitelist
