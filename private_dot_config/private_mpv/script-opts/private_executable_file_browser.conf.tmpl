@@ -11,7 +11,7 @@
 # windows:   root=~/,C:/
 {{- if eq .chezmoi.os "darwin" }}
 root=/Volumes/Anime,~/,/
-{{- else if and (hasKey .chezmoi "osRelease") (eq .chezmoi.osRelease.id "steamos") }}
+{{- else if and (hasKey .chezmoi "osRelease") (hasKey .chezmoi.osRelease "id") (eq .chezmoi.osRelease.id "steamos") }}
 root=~/Downloads/anime/,/mnt/Anime/,/mnt/Entertainment/,~/,/
 {{- else if eq .chezmoi.os "linux" }}
 root=~/,/
@@ -40,7 +40,7 @@ max_concurrency=16
 
 # enable custom keybinds
 # the keybind json file must go in ~~/script-opts
-{{- if and (hasKey .chezmoi "osRelease") (eq .chezmoi.osRelease.id "steamos") }}
+{{- if and (hasKey .chezmoi "osRelease") (hasKey .chezmoi.osRelease "id") (eq .chezmoi.osRelease.id "steamos") }}
 custom_keybinds=yes
 {{- else }}
 custom_keybinds=no

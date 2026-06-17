@@ -1,6 +1,5 @@
 # SteamDeck specific configuration
-{{- if and (hasKey .chezmoi "osRelease") (eq .chezmoi.osRelease.id "steamos") }}
-
+{{- if and (hasKey .chezmoi "osRelease") (hasKey .chezmoi.osRelease "id") (eq .chezmoi.osRelease.id "steamos") }} 
 # Always fullscreen (required for proper resolution detection in Big Picture mode / Steam Deck
 fs=yes
 
