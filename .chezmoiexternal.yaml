@@ -1,0 +1,7 @@
+.config/mpv/scripts/file-browser:
+  type: git-repo
+  url: https://github.com/CogentRedTester/mpv-file-browser.git
+  clone:
+    args:
+    - --revision=e07ab168fbba24063cd81c9b6f3fb8b85d5fe24d
+    - --depth=1
