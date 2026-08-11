@@ -58,7 +58,7 @@ command = [
   "-v", "{{.InputDir}}:/input", "-v", "{{.OutputDir}}:/output",
   "linuxserver/ffmpeg",
   "-i", "/input/{{.InputBase}}",
-  "-c:a", "libfdk_aac", "-vbr", "5", "-map_metadata", "0", "-vcodec", "copy",
+  "-c:a", "libfdk_aac", "-vbr", "5", "-ar", "44100", "-map_metadata", "0", "-vcodec", "copy",
   "-metadata", "comment={{.Comment}}",
   "/output/{{.OutputBase}}",
 ]
