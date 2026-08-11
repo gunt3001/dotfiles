@@ -1,0 +1,77 @@
+[transmission]
+# Full URL to the Transmission RPC endpoint, e.g. "http://nas.local:9091/transmission/rpc"
+rpc_url = "http://192.168.1.12:9091/transmission/rpc"
+
+# Optional HTTP basic auth credentials for the RPC endpoint.
+username = ""
+password = ""
+
+[paths]
+# Transmission's default download directory, as a path prefix, exactly as
+# Transmission reports it via RPC (e.g. "/downloads").
+remote_download_dir = "/downloads/complete"
+
+# The SAME directory, as mounted/visible on THIS machine (e.g. "/mnt/nas/downloads").
+# Files are located by swapping the remote_download_dir prefix for this one.
+local_mount_dir = "/volume1/Temporary/TransmissionDownloads/complete"
+
+# Where finished tracks are saved. Created automatically if it doesn't
+# exist. Leave blank to save into the directory tomoyo is run from (the
+# default) — useful to set explicitly if you'd rather not rely on always
+# invoking tomoyo from the right CWD.
+output_dir = "/volume1/Temporary/tomoyo-outdir"
+
+[ffmpeg]
+# The ffmpeg (or wrapper) invocation used to transcode a track to AAC/m4a.
+# Each element is a Go text/template string, rendered independently and
+# executed directly (no shell), so no quoting/escaping is needed.
+# Available template variables:
+#   {{.InputPath}}   absolute path to the source audio file (local mount path)
+#   {{.InputDir}}    directory containing the source file
+#   {{.InputBase}}   source file's base name (with extension)
+#   {{.OutputPath}}  absolute path the output .m4a should be written to (in CWD)
+#   {{.OutputDir}}   directory portion of OutputPath
+#   {{.OutputBase}}  output file's base name
+#   {{.Comment}}     "Generated with Tomoyo Music Downloader v<version>"
+#
+# Default: call ffmpeg directly. This requires an ffmpeg build with libfdk_aac
+# support, which most distro packages (including Ubuntu's) do NOT include due
+# to licensing. To use libfdk_aac via a Docker image instead, replace this
+# with something like:
+#   command = [
+#     "docker", "run", "--rm",
+#     "-v", "{{.InputDir}}:/input", "-v", "{{.OutputDir}}:/output",
+#     "linuxserver/ffmpeg",
+#     "-i", "/input/{{.InputBase}}",
+#     "-c:a", "libfdk_aac", "-vbr", "5", "-map_metadata", "0", "-vcodec", "copy",
+#     "-metadata", "comment={{.Comment}}",
+#     "/output/{{.OutputBase}}",
+#   ]
+#    command = [
+#      "ffmpeg", "-i", "{{.InputPath}}",
+#      "-c:a", "libfdk_aac", "-vbr", "5", "-ar", "44100", "-map_metadata", "0", "-vcodec", "copy",
+#      "-metadata", "comment={{.Comment}}",
+#      "{{.OutputPath}}",
+#    ]
+command = [
+  "docker", "run", "--rm",
+  "-v", "{{.InputDir}}:/input", "-v", "{{.OutputDir}}:/output",
+  "linuxserver/ffmpeg",
+  "-i", "/input/{{.InputBase}}",
+  "-c:a", "libfdk_aac", "-vbr", "5", "-map_metadata", "0", "-vcodec", "copy",
+  "-metadata", "comment={{.Comment}}",
+  "/output/{{.OutputBase}}",
+]
+
+# If you run tomoyo itself inside a container (sibling to the one running
+# the ffmpeg image above), the docker daemon binds -v paths against the
+# HOST filesystem, not tomoyo's container filesystem. {{.InputDir}} can be
+# made to work by mounting the Transmission download dir at a matching path
+# on the host and in every container. {{.OutputDir}} usually can't, since
+# it's wherever tomoyo's CWD happens to be, which typically exists nowhere
+# else. Set work_dir to a directory that IS mounted at the same path on the
+# host and in every container (including tomoyo's own); tomoyo will convert
+# into it and copy the finished file out to the real destination itself.
+# Leave blank to convert directly into the destination (the default, no
+# container-path issues if you run tomoyo directly on the host).
+work_dir = "/volume1/Temporary/tomoyo-workdir"
