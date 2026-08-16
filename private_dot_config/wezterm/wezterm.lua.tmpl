@@ -16,7 +16,12 @@ config.default_prog = { "zsh" }
 -- Font & Colors
 config.color_scheme = "Catppuccin Mocha" -- or Macchiato, Frappe, Latte
 config.font = wezterm.font_with_fallback({
+{{- if eq .chezmoi.os "linux" }}
+	-- For Linux systems, use the OSS version of CascadiaCode instead
+	"CaskaydiaCove NF",
+{{- else }}
 	"Cascadia Code NF",
+{{- end }}
 	"Hiragino Maru Gothic ProN",
 })
 {{- if eq .chezmoi.os "darwin" }}
